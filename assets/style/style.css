@@ -146,6 +146,20 @@ body {
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
+#movie-section #upcoming-movies #upcoming-loader {
+  margin: 35px 0;
+  font-size: 50px;
+  animation: load 3s infinite linear;
+  display: none;
+}
+@keyframes load {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 #movie-section #upcoming-movies .movies-container {
   display: flex;
   align-items: center;

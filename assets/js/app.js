@@ -1,6 +1,7 @@
 const btn = document.getElementById("search-btn");
 const apiKey = "6ef8368bc9a67ea426a6764f80dd7cfd";
 const upcomingContainer = document.getElementById("upcoming-container");
+const upcomingLoader = document.getElementById("upcoming-loader");
 
 window.addEventListener("DOMContentLoaded", async () => {
   const options = {
@@ -13,6 +14,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   };
 
   try {
+    upcomingLoader.style.display = "block";
     const res = await fetch(
       "https://api.themoviedb.org/3/movie/upcoming?language=it-IT&page=1",
       options
@@ -83,5 +85,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
   } catch (err) {
     alert(err);
+  } finally {
+    upcomingLoader.style.display = "none";
   }
 });
