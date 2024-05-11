@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -397,4 +398,438 @@ body {
 #movie-details-section #movie-details-container #right-details-container #rating-container .bx:hover {
   font-size: 20px;
   color: rgb(168, 135, 16);
+}
+
+.hp-img {
+  width: 100vw;
+}
+@media screen and (min-width: 768px) {
+  .hp-img {
+    min-height: 100vh;
+    width: auto;
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
+}
+@media screen and (min-width: 1226px) {
+  .section-container {
+    flex-direction: row;
+  }
+}
+.section-container .section-sub-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.section-container .section-sub-container .section-title {
+  font-size: 80px;
+  text-align: center;
+  background: linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px;
+}
+
+#welcome-section {
+  animation: appear 5s linear;
+}
+@keyframes appear {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+#welcome-section .section-container .section-sub-container #entry-arrow {
+  text-decoration: none;
+  color: rgb(194, 155, 19);
+  font-size: 30px;
+  animation: up-and-down 2s linear infinite;
+}
+@keyframes up-and-down {
+  from {
+    position: relative;
+    opacity: 100%;
+  }
+  to {
+    position: relative;
+    opacity: 20%;
+    bottom: 10px;
+  }
+}
+
+#hogwarts-section {
+  background: linear-gradient(rgba(59, 6, 6, 0.6352941176), #000000);
+}
+#hogwarts-section .section-container .section-sub-container #houses-container {
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  padding: 5px;
+}
+#hogwarts-section .section-container .section-sub-container #houses-container .img-border {
+  max-width: 277px;
+  max-height: 20vh;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  #hogwarts-section .section-container .section-sub-container #houses-container .img-border {
+    max-width: 256px;
+    max-height: 400px;
+  }
+}
+#hogwarts-section .section-container .section-sub-container #houses-container .img-border .houses-img {
+  border-radius: 10px;
+  cursor: pointer;
+  transform: scale(1.4);
+  opacity: 40%;
+  position: relative;
+  bottom: 60px;
+}
+#hogwarts-section .section-container .section-sub-container #houses-container .img-border .houses-img:hover {
+  opacity: 100%;
+}
+
+.single-house-section {
+  margin-top: 30px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-house-section .single-house-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  .single-house-section .single-house-container {
+    flex-direction: row;
+    padding: 30px;
+  }
+}
+.single-house-section .single-house-container .single-house-left .border-img {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.single-house-section .single-house-container .single-house-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+}
+.single-house-section .single-house-container .single-house-right .house-title {
+  font-size: 80px;
+  text-shadow: 2px 2px black;
+}
+.single-house-section .single-house-container .single-house-right .house-founder {
+  color: rgb(114, 110, 110);
+  font-size: 40px;
+}
+.single-house-section .single-house-container .single-house-right .house-description {
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .single-house-section .single-house-container .single-house-right .house-description {
+    text-align: left;
+  }
+}
+.single-house-section .single-house-container .single-house-right .bx {
+  text-decoration: none;
+  font-size: 50px;
+  animation: up-arrrow 2s linear infinite;
+}
+@keyframes up-arrrow {
+  from {
+    opacity: 20%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+#griffindor-section {
+  background: linear-gradient(rgba(255, 255, 255, 0.836), rgba(197, 5, 5, 0.304)), url(/assets/img/griffindorbg.jpg) no-repeat;
+  background-size: cover;
+}
+#griffindor-section #griffindor-logo {
+  position: relative;
+  bottom: 70px;
+  left: 15px;
+  transform: scale(1.3);
+}
+#griffindor-section #griffindor-title {
+  color: rgb(157, 43, 33);
+}
+#griffindor-section #griffindor-founder {
+  color: rgb(168, 135, 16);
+  text-shadow: 2px 2px black;
+}
+#griffindor-section #griffindor-arrow-up {
+  color: rgb(168, 135, 16);
+}
+
+#slytherin-section {
+  background: linear-gradient(rgba(255, 255, 255, 0.785), rgba(2, 67, 34, 0.696)), url(/assets/img/slytherinbg.jpg) no-repeat;
+  background-size: cover;
+}
+#slytherin-section #slytherin-logo {
+  position: relative;
+  bottom: 70px;
+  left: 15px;
+  transform: scale(1.3);
+}
+#slytherin-section #slytherin-title {
+  color: rgb(3, 72, 53);
+}
+#slytherin-section #slytherin-founder {
+  color: rgb(187, 191, 202);
+  text-shadow: 2px 2px black;
+}
+#slytherin-section #slytherin-arrow-up {
+  color: rgb(187, 191, 202);
+}
+
+#hufflepuff-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.712), rgba(248, 246, 246, 0.735)), url(/assets/img/hufflepuffbg.jpg) no-repeat;
+  background-size: cover;
+}
+#hufflepuff-section #hufflepuff-logo {
+  position: relative;
+  bottom: 85px;
+  left: 15px;
+  transform: scale(1.3);
+}
+#hufflepuff-section #hufflepuff-title {
+  color: rgb(237, 197, 36);
+}
+#hufflepuff-section #hufflepuff-founder {
+  color: rgb(0, 0, 0);
+}
+#hufflepuff-section #hufflepuff-arrow-up {
+  color: rgb(0, 0, 0);
+}
+
+#ravenclaw-section {
+  background: linear-gradient(rgba(255, 255, 255, 0.906), rgba(5, 38, 110, 0.265)), url(/assets/img/ravenclawbg.jpg) no-repeat;
+  background-size: cover;
+}
+#ravenclaw-section #ravenclaw-logo {
+  position: relative;
+  bottom: 90px;
+  transform: scale(1.3);
+}
+#ravenclaw-section #ravenclaw-title {
+  color: rgb(41, 84, 126);
+}
+#ravenclaw-section #ravenclaw-founder {
+  color: rgb(235, 186, 43);
+  text-shadow: 2px 2px black;
+}
+#ravenclaw-section #ravenclaw-arrow-up {
+  color: rgb(235, 186, 43);
+}
+#ravenclaw-section #ravenclaw-arrow-down {
+  color: rgb(235, 186, 43);
+}
+
+#characters-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 1226px) {
+  #characters-section {
+    flex-direction: row;
+  }
+}
+#characters-section .section-container .border {
+  overflow: hidden;
+}
+@media screen and (min-width: 1226px) {
+  #characters-section .section-container .border {
+    max-width: 80vw;
+  }
+}
+#characters-section .section-sub-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#characters-section .section-sub-container .section-title {
+  font-size: 60px;
+  background: linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+#characters-section .section-sub-container .bx {
+  cursor: pointer;
+  font-size: 30px;
+  background: linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: updown 2s linear infinite;
+}
+@keyframes updown {
+  from {
+    position: relative;
+  }
+  to {
+    position: relative;
+    top: 20px;
+  }
+}
+
+#characters-results-section {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  max-width: 100vw;
+  flex-direction: column;
+}
+#characters-results-section #filter-char-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  opacity: 0;
+}
+#characters-results-section #filter-char-container .filter-btn {
+  background: rgb(245, 197, 24);
+  padding: 5px;
+  color: black;
+  border-radius: 20px;
+  min-width: 200px;
+  text-align: center;
+}
+#characters-results-section #filter-char-container .filter-btn:hover {
+  cursor: pointer;
+  background-color: rgb(168, 135, 16);
+}
+#characters-results-section #filter-char-container .current {
+  background: rgb(80, 63, 4);
+  color: white;
+}
+#characters-results-section #character-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+#characters-results-section #character-container #char-load-icon {
+  font-size: 80px;
+  animation: load 2s linear infinite;
+  height: 100%;
+  display: none;
+}
+@keyframes load {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#characters-results-section #character-container #char-btn {
+  font-size: 60px;
+  box-shadow: 2px 2px 2px 2px white;
+  padding: 10px;
+  border-radius: 5px;
+}
+#characters-results-section #character-container #char-btn:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+#characters-results-section #character-container .single-char-card {
+  background: rgb(245, 197, 24);
+  border-radius: 0 0 15px 15px;
+  max-width: 90vw;
+}
+#characters-results-section #character-container .single-char-card .border {
+  overflow: hidden;
+}
+#characters-results-section #character-container .single-char-card .char-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+#characters-results-section #character-container .single-char-card .char-description .char-name {
+  font-size: 40px;
+  text-align: center;
+  min-height: 30px;
+  max-width: 230px;
+}
+#characters-results-section #character-container .single-char-card .char-description .char-house {
+  padding: 5px;
+  border-radius: 20px;
+  min-width: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#characters-results-section #character-container .single-char-card .char-description .gryffindor-house {
+  background: rgb(157, 43, 33);
+}
+#characters-results-section #character-container .single-char-card .char-description .slytherin-house {
+  background: rgb(3, 72, 53);
+  color: rgb(187, 191, 202);
+}
+#characters-results-section #character-container .single-char-card .char-description .hufflepuff-house {
+  background: rgb(237, 197, 36);
+  box-shadow: 2px 2px 2px 2px black;
+}
+#characters-results-section #character-container .single-char-card .char-description .ravenclaw-house {
+  background: rgb(41, 84, 126);
+}
+#characters-results-section #character-container .single-char-card .char-description .children-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+#characters-results-section #character-container .single-char-card .char-description .children-container .children-title {
+  font-size: 20px;
+}
+#characters-results-section #api-error {
+  color: rgb(187, 11, 11);
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 60px;
+  display: none;
 }/*# sourceMappingURL=style.css.map */

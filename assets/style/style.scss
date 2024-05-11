@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -462,3 +463,548 @@ body{
         }
     }
 }
+
+// --------- HP PAGE ----------------
+
+// global classes 
+
+.hp-img{
+    width: 100vw;
+
+    @include tablet{
+        min-height: 100vh;
+        width: auto;
+    }
+}
+
+
+
+.section-container{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+
+    @include intermediate{
+        flex-direction: row;
+    }
+
+    .section-sub-container{
+        width: 100%;
+        @include flexCenter;
+        flex-direction: column;
+        gap: 50px;
+
+        .section-title{
+            font-size: 80px;
+            text-align: center;
+            background: $b-w-gradient;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 10px;
+            
+        }
+
+}
+}
+
+#welcome-section{
+
+    animation: appear 5s linear;
+
+    @keyframes appear{
+        from{
+            opacity: 0%;
+        }
+        to{
+            opacity: 100%;
+        }
+    }
+
+
+    .section-container{
+ 
+
+        .section-sub-container{
+            
+            
+
+            #entry-arrow{
+                text-decoration: none;
+                color: $smbg;
+                font-size: 30px;
+                animation: up-and-down 2s linear infinite;
+
+                @keyframes up-and-down{
+                    from{
+                        position: relative;
+                        opacity: 100%;
+                    }
+                    to{
+                        position: relative;
+                        opacity: 20%;
+                        bottom: 10px;
+
+                    }
+                }
+
+
+            }
+
+        }
+
+    }   
+}
+
+#hogwarts-section{
+    background: $gbg;
+    .section-container{
+        .section-sub-container{
+            #houses-container{
+                
+                display: flex;
+                @include flexCenter;
+                flex-wrap: wrap;
+                max-width: 90vw;
+                padding: 5px;
+
+               
+
+                .img-border{
+                    max-width: 277px;
+                    max-height: 20vh;
+                    overflow: hidden;
+
+                    @include tablet{
+                        max-width: 256px;
+                        max-height: 400px ;
+                    }
+
+
+                    .houses-img{
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transform: scale(1.4);
+                        opacity: 40%;
+                        position: relative;
+                        bottom: 60px;
+
+                        &:hover{
+                            opacity: 100%;
+                        }
+                       
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------- GENERAL HOUSE SECTION STYLE -----------
+
+.single-house-section{
+    margin-top: 30px;
+    min-height: 100vh;
+    @include flexCenter;
+    .single-house-container{
+        @include flexCenter;
+        flex-direction: column;
+        gap: 30px;
+
+        @include tablet{
+            flex-direction: row;
+            padding: 30px;
+        }
+        .single-house-left{
+            .border-img{
+                width: 300px;
+                height: 300px;
+                overflow: hidden;
+                border-radius: 100%;
+
+               
+            }
+        }
+
+        .single-house-right{
+            @include flexCenter;
+            padding: 10px;
+            flex-direction: column;
+
+            .house-title{
+                font-size: 80px;
+                text-shadow: 2px 2px $btext;
+            }
+
+            .house-founder{
+                color: $gtext;
+                font-size: 40px;
+            }
+
+           .house-description{
+            padding: 5px;
+            font-size: 30px;
+            text-align: center;
+            color: $btext;
+            @include flexCenter;
+
+
+
+            @include tablet{
+                text-align: left;
+            }
+           }
+
+           .bx{
+            text-decoration: none;
+            font-size: 50px;
+            animation: up-arrrow 2s linear infinite;
+            
+
+            @keyframes up-arrrow{
+                from{   
+                    opacity: 20%;
+                }
+
+                to{
+                    opacity: 100%;
+                }
+            }
+           }
+
+           
+
+
+        }
+    }
+}
+
+// ------- GRIFFINDOR SECTION -----------
+
+#griffindor-section{
+    background: linear-gradient(rgba(255, 255, 255, 0.836), rgba(197, 5, 5, 0.304)),url(/assets/img/griffindorbg.jpg) no-repeat;
+    background-size: cover;
+
+    #griffindor-logo{
+        position: relative;
+        bottom: 70px;
+        left: 15px;
+        transform: scale(1.3);
+    }
+    
+
+    #griffindor-title{
+        color: $griffindor-color;
+        
+    }
+
+    #griffindor-founder{
+        color: $griffindor-second;
+        text-shadow: 2px 2px $btext;
+
+    }
+
+    #griffindor-arrow-up{
+        color: $griffindor-second;
+       }
+}
+
+// ------- SLITHERYN SECTION -----------
+
+#slytherin-section{
+    background: linear-gradient(rgba(255, 255, 255, 0.785), rgba(2, 67, 34, 0.696)),url(/assets/img/slytherinbg.jpg) no-repeat;
+    background-size: cover;
+
+    #slytherin-logo{
+        position: relative;
+        bottom: 70px;
+        left: 15px;
+        transform: scale(1.3);
+    }
+    
+
+    #slytherin-title{
+        color: $slytherin-color;
+    }
+
+    #slytherin-founder{
+        color: $slytherin-second;
+        text-shadow: 2px 2px $btext;
+
+    }
+
+    #slytherin-arrow-up{
+        color: $slytherin-second;
+       }
+}
+
+// ------- HUFFLEPUFF SECTION -----------
+
+#hufflepuff-section{
+    background: linear-gradient(rgba(0, 0, 0, 0.712), rgba(248, 246, 246, 0.735)),url(/assets/img/hufflepuffbg.jpg) no-repeat;
+    background-size: cover;
+
+    #hufflepuff-logo{
+        position: relative;
+        bottom: 85px;
+        left: 15px;
+        transform: scale(1.3);
+    }
+    
+
+    #hufflepuff-title{
+        color: $hufflepuff-color;
+    }
+
+    #hufflepuff-founder{
+        color: $hufflepuff-second;
+    }
+
+    #hufflepuff-arrow-up{
+        color: $hufflepuff-second;
+       }
+}
+
+// ------- RAVENCLAW SECTION -----------
+
+#ravenclaw-section{
+    background: linear-gradient(rgba(255, 255, 255, 0.906), rgba(5, 38, 110, 0.265)),url(/assets/img/ravenclawbg.jpg) no-repeat;
+    background-size: cover;
+
+    #ravenclaw-logo{
+        position: relative;
+        bottom: 90px;
+        transform: scale(1.3);
+    }
+    
+
+    #ravenclaw-title{
+        color: $ravenclaw-color;
+    }
+
+    #ravenclaw-founder{
+        color: $ravenclaw-second;
+        text-shadow: 2px 2px $btext;
+
+    }
+
+    #ravenclaw-arrow-up{
+        color: $ravenclaw-second;
+       }
+
+       #ravenclaw-arrow-down{
+        color: $ravenclaw-second;
+       }
+}
+
+// ------------ CHARACTERS SECTION -------------
+
+#characters-section{
+    min-height: 100vh;
+    @include flexCenter;
+    flex-direction: column-reverse;
+    
+
+    @include intermediate{
+        flex-direction: row;
+    }
+
+    .section-container{
+
+        .border{
+          overflow: hidden;
+
+          @include intermediate{
+            max-width: 80vw;
+          }
+        }
+        
+    }
+
+    .section-sub-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+        .section-title{
+            font-size: 60px;
+            background: $b-w-gradient;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .bx{
+            cursor: pointer;
+            font-size: 30px;
+            background: $b-w-gradient;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: updown 2s linear infinite;
+
+            @keyframes updown{
+                from{
+                    position: relative;
+                }
+                to{
+                    position: relative;
+                    top: 20px;
+                }
+            }
+        }
+    }
+}
+
+// ---------- CHARACTERS API SECTION ---------
+
+#characters-results-section{
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    max-width: 100vw;
+
+    flex-direction: column;
+
+    #filter-char-container{
+        
+        @include flexCenter;
+        flex-wrap: wrap;
+        gap: 20px;
+        opacity: 0;
+
+        .filter-btn{
+            background: $slbg;
+            padding: 5px;
+            color: $btext;
+            border-radius: 20px;
+            min-width: 200px;
+            text-align: center;
+
+            &:hover{
+                cursor: pointer;
+                background-color: $sdbg;
+            }
+        }
+
+        .current{
+            background: $current-filter;
+            color: $wtext;
+        }
+    }
+
+    #character-container{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+
+        #char-load-icon{
+            font-size: 80px;
+            animation: load 2s linear infinite;
+            height: 100%;
+            display: none;
+
+            @keyframes load{
+                from{
+                    transform: rotate(0);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+            }
+
+        }
+
+        #char-btn{
+            font-size: 60px;
+            box-shadow: 2px 2px 2px 2px $wtext;
+            padding: 10px;
+            border-radius: 5px;
+
+            &:hover{
+                background: $wtext;
+                color: $btext;
+                cursor: pointer;
+            }
+        }
+
+        .single-char-card{
+            background: $slbg;
+            border-radius: 0 0 15px 15px ;
+            max-width: 90vw;
+            .border{
+                overflow: hidden;
+            }
+
+            .char-description{
+                @include flexCenter;
+                flex-direction: column;
+                color: $btext;
+
+                .char-name{
+                    font-size: 40px;
+                    text-align: center;
+                    min-height: 30px;
+                    max-width: 230px;
+                }
+
+                .char-house{
+                    padding: 5px;
+                    border-radius: 20px;
+                    min-width: 100px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+
+                .gryffindor-house{
+                    background: $griffindor-color;
+                }
+
+                .slytherin-house{
+                    background: $slytherin-color;
+                    color: $slytherin-second;
+                }
+
+                .hufflepuff-house{
+                    background: $hufflepuff-color;
+                    box-shadow: 2px 2px 2px 2px $btext;
+                }
+
+                .ravenclaw-house{
+                    background: $ravenclaw-color;
+                }
+
+                .children-container{
+                    @include flexCenter;
+                    flex-direction: column;
+                    margin-bottom: 10px;
+                    .children-title{
+                        font-size: 20px;
+                    }
+                }
+                
+            }
+        }
+
+    }
+
+
+ #api-error{
+    color: $error;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 60px;
+    display: none;
+ }
+
+}
+
+
+
+
+
+

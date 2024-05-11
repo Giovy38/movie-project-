@@ -1,5 +1,6 @@
 // bg 
 $bg: rgb(0, 0, 0);
+$gbg: linear-gradient( #3b0606a2, #000000); 
 
 // text color
 $wtext: white;
@@ -12,5 +13,29 @@ $gtext: rgb(114, 110, 110);
 $slbg: rgb(245, 197, 24); // second light bg
 $smbg: rgb(194, 155, 19); // second medium bg
 $sdbg: rgb(168, 135, 16); // second dark bg
+
+
+// hp houses colors 
+
+$griffindor-color: rgb(157, 43, 33);
+$griffindor-second: rgb(168, 135, 16);
+
+$slytherin-color: rgb(3, 72, 53);
+$slytherin-second: rgb(187, 191, 202);
+
+$hufflepuff-color: rgb(237, 197, 36);
+$hufflepuff-second: rgb(0, 0, 0);
+
+$ravenclaw-color: rgb(41, 84, 126);
+$ravenclaw-second: rgb(235, 186, 43);
+
+// api error color 
+
+$error: rgb(187, 11, 11);
+
+// current filter
+$current-filter: rgb(80, 63, 4); 
+
+
 
 
