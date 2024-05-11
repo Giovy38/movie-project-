@@ -605,6 +605,9 @@ body {
 #griffindor-section #griffindor-arrow-up {
   color: rgb(168, 135, 16);
 }
+#griffindor-section #griffindor-arrow-down {
+  color: rgb(168, 135, 16);
+}
 
 #slytherin-section {
   background: linear-gradient(rgba(255, 255, 255, 0.785), rgba(2, 67, 34, 0.696)), url(/assets/img/slytherinbg.jpg) no-repeat;
@@ -626,6 +629,9 @@ body {
 #slytherin-section #slytherin-arrow-up {
   color: rgb(187, 191, 202);
 }
+#slytherin-section #slytherin-arrow-down {
+  color: rgb(187, 191, 202);
+}
 
 #hufflepuff-section {
   background: linear-gradient(rgba(0, 0, 0, 0.712), rgba(248, 246, 246, 0.735)), url(/assets/img/hufflepuffbg.jpg) no-repeat;
@@ -644,6 +650,9 @@ body {
   color: rgb(0, 0, 0);
 }
 #hufflepuff-section #hufflepuff-arrow-up {
+  color: rgb(0, 0, 0);
+}
+#hufflepuff-section #hufflepuff-arrow-down {
   color: rgb(0, 0, 0);
 }
 
