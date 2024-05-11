@@ -6,7 +6,15 @@ const searchMoviesContainer = document.getElementById(
   "search-results-container"
 );
 
-searchBtn.addEventListener("click", async () => {
+searchBtn.addEventListener("click", searchMovie);
+
+searchContent.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    searchMovie();
+  }
+});
+
+async function searchMovie() {
   if (searchContent.value.trim() !== "") {
     // remove last search movies
     const lastSearch = Array.from(searchMoviesContainer.childNodes);
@@ -31,8 +39,6 @@ searchBtn.addEventListener("click", async () => {
         options
       );
       const data = await res.json();
-
-      console.log(data.results);
 
       const searchedMovies = data.results;
 
@@ -101,4 +107,4 @@ searchBtn.addEventListener("click", async () => {
   } else {
     alert("you must write a title before search");
   }
-});
+}
