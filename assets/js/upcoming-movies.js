@@ -1,4 +1,3 @@
-const btn = document.getElementById("search-btn");
 const apiKey = "6ef8368bc9a67ea426a6764f80dd7cfd";
 const upcomingContainer = document.getElementById("upcoming-container");
 const upcomingLoader = document.getElementById("upcoming-loader");
@@ -16,19 +15,18 @@ window.addEventListener("DOMContentLoaded", async () => {
   try {
     upcomingLoader.style.display = "block";
     const res = await fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?language=it-IT&page=1",
+      "https://api.themoviedb.org/3/movie/upcoming?language=en-EN&page=1",
       options
     );
     const data = await res.json();
 
     const upcomingMovies = data.results;
 
-    console.log(upcomingMovies);
-
     upcomingMovies.forEach((movie) => {
       //   create all card element
       const singleMovieCard = document.createElement("div");
       const border = document.createElement("div");
+      const imgDiv = document.createElement("div");
       const img = document.createElement("img");
       const title = document.createElement("h2");
       const ratingContainer = document.createElement("div");
@@ -43,6 +41,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       //   assign class to all element
       singleMovieCard.className = "single-movie-card";
       border.className = "border";
+      imgDiv.className = "img-div-border";
       img.className = "single-card-img";
       title.className = "single-card-title";
       ratingContainer.className = "rating-container";
@@ -54,11 +53,18 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       // assign value to all element
 
-      title.innerHTML = `${movie.title}`;
+      title.innerHTML = `${movie.original_title}`;
       ratingValue.innerHTML = `${movie.vote_average.toFixed(1)}/10`;
-      img.src = `${imgbackUrl}${movie.poster_path}`;
+      if (movie.poster_path === null) {
+        img.src = "/assets/img/imgnotfound.jpg";
+      } else {
+        img.src = `${imgbackUrl}${movie.poster_path}`;
+      }
 
       // append all element
+
+      // append img
+      imgDiv.appendChild(img);
 
       //  read more div
       readMoreBtn.appendChild(readMoreText);
@@ -70,7 +76,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       //   border
 
-      border.appendChild(img);
+      border.appendChild(imgDiv);
       border.appendChild(title);
       border.appendChild(ratingContainer);
       border.appendChild(readMoreLink);

@@ -1,8 +1,8 @@
-const btn = document.getElementById("btn");
-const img = document.getElementById("img");
+// const btn = document.getElementById("btn");
+// const img = document.getElementById("img");
 
-btn.addEventListener("click", fetchSpells);
-img.addEventListener("click", imgFound);
+// btn.addEventListener("click", fetchSpells);
+// img.addEventListener("click", imgFound);
 
 // HARRY POTTER API
 
