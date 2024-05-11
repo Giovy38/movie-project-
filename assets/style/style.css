@@ -800,6 +800,7 @@ body {
   min-width: 100px;
   text-align: center;
   margin-bottom: 10px;
+  font-size: 23px;
 }
 #characters-results-section #character-container .single-char-card .char-description .gryffindor-house {
   background: rgb(157, 43, 33);
@@ -822,7 +823,7 @@ body {
   flex-direction: column;
   margin-bottom: 10px;
 }
-#characters-results-section #character-container .single-char-card .char-description .children-container .children-title {
+#characters-results-section #character-container .single-char-card .char-description .children-container p {
   font-size: 20px;
 }
 #characters-results-section #api-error {

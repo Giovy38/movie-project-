@@ -957,6 +957,7 @@ body{
                     min-width: 100px;
                     text-align: center;
                     margin-bottom: 10px;
+                    font-size: 23px;
                 }
 
                 .gryffindor-house{
@@ -981,7 +982,8 @@ body{
                     @include flexCenter;
                     flex-direction: column;
                     margin-bottom: 10px;
-                    .children-title{
+                    
+                    p{
                         font-size: 20px;
                     }
                 }

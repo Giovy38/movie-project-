@@ -186,3 +186,64 @@ filterBtns.forEach((btn) => {
     });
   });
 });
+
+// all filter
+
+allFilter.addEventListener("click", () => {
+  const allChar = document.querySelectorAll(".single-char-card");
+
+  allChar.forEach((char) => {
+    char.style.display = "block";
+  });
+});
+
+// griffindor filter
+griffindorFilter.addEventListener("click", () => {
+  const allChar = document.querySelectorAll(".single-char-card");
+
+  allChar.forEach((char) => {
+    char.style.display = "block";
+
+    if (char.children[1].children[1].textContent !== "Gryffindor") {
+      char.style.display = "none";
+    }
+  });
+});
+
+// slytherin filter
+slytherinFilter.addEventListener("click", () => {
+  const allChar = document.querySelectorAll(".single-char-card");
+
+  allChar.forEach((char) => {
+    char.style.display = "block";
+    if (char.children[1].children[1].textContent !== "Slytherin") {
+      char.style.display = "none";
+    }
+  });
+});
+
+// hufflepuff filter
+hufflepuffFilter.addEventListener("click", () => {
+  const allChar = document.querySelectorAll(".single-char-card");
+
+  allChar.forEach((char) => {
+    char.style.display = "block";
+
+    if (char.children[1].children[1].textContent !== "Hufflepuff") {
+      char.style.display = "none";
+    }
+  });
+});
+
+// ravenclaw filter
+ravenclawFilter.addEventListener("click", () => {
+  const allChar = document.querySelectorAll(".single-char-card");
+
+  allChar.forEach((char) => {
+    char.style.display = "block";
+
+    if (char.children[1].children[1].textContent !== "Ravenclaw") {
+      char.style.display = "none";
+    }
+  });
+});
