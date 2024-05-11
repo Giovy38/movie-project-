@@ -464,6 +464,20 @@ body{
     }
 }
 
+// ---------- FOOTER --------------------
+.footer-section{
+    width: 100%;
+    height: 80px;
+    background: $slbg;
+    @include flexCenter;
+
+    p{
+        font-size: 30px;
+        text-align: center;
+        color: $btext;
+    }
+}
+
 // --------- HP PAGE ----------------
 
 // global classes 
