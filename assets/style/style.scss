@@ -278,6 +278,10 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        #no-result-found-text{
+            display: none;
+        }
     }
   
 

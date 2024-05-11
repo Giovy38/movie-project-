@@ -5,6 +5,7 @@ const searchContent = document.getElementById("search-input");
 const searchMoviesContainer = document.getElementById(
   "search-results-container"
 );
+const noResultFoundText = document.getElementById("no-result-found-text");
 
 searchBtn.addEventListener("click", searchMovie);
 
@@ -33,6 +34,7 @@ async function searchMovie() {
 
     try {
       loader.style.display = "block";
+      noResultFoundText.style.display = "none";
 
       const res = await fetch(
         `${baseUrl}/search/movie?${apiKey}&query=${searchContent.value}`,
@@ -41,6 +43,12 @@ async function searchMovie() {
       const data = await res.json();
 
       const searchedMovies = data.results;
+
+      if (searchedMovies.length > 0) {
+        noResultFoundText.style.display = "none";
+      } else {
+        noResultFoundText.style.display = "block";
+      }
 
       searchedMovies.forEach((movie) => {
         //   create all card element
@@ -105,7 +113,7 @@ async function searchMovie() {
         imgDiv.addEventListener("click", movieDetails);
         readMoreLink.addEventListener("click", movieDetails);
 
-        function movieDetails(e) {
+        function movieDetails() {
           localStorage.setItem("movieId", movie.id);
         }
       });
