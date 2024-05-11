@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       //   create all card element
       const singleMovieCard = document.createElement("div");
       const border = document.createElement("div");
+      const imgLink = document.createElement("a");
       const imgDiv = document.createElement("div");
       const img = document.createElement("img");
       const title = document.createElement("h2");
@@ -41,6 +42,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       //   assign class to all element
       singleMovieCard.className = "single-movie-card";
       border.className = "border";
+      imgLink.href = "/assets/page/movie-details.html";
       imgDiv.className = "img-div-border";
       img.className = "single-card-img";
       title.className = "single-card-title";
@@ -65,6 +67,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       // append img
       imgDiv.appendChild(img);
+      imgLink.appendChild(imgDiv);
 
       //  read more div
       readMoreBtn.appendChild(readMoreText);
@@ -76,7 +79,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       //   border
 
-      border.appendChild(imgDiv);
+      border.appendChild(imgLink);
       border.appendChild(title);
       border.appendChild(ratingContainer);
       border.appendChild(readMoreLink);
@@ -88,6 +91,14 @@ window.addEventListener("DOMContentLoaded", async () => {
       // upcoming container
 
       upcomingContainer.appendChild(singleMovieCard);
+
+      // add event on imgDiv and read more
+      imgDiv.addEventListener("click", movieDetails);
+      readMoreLink.addEventListener("click", movieDetails);
+
+      function movieDetails(e) {
+        localStorage.setItem("movieId", movie.id);
+      }
     });
   } catch (err) {
     alert(err);
@@ -95,3 +106,5 @@ window.addEventListener("DOMContentLoaded", async () => {
     upcomingLoader.style.display = "none";
   }
 });
+
+// movie details function

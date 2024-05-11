@@ -20,7 +20,7 @@
 
     <!-- import style from stile.css -->
     <link rel="stylesheet" href="/assets/style/style.css" />
-    <title>Harry Potter</title>
+    <title>Movie Details</title>
   </head>
   <body>
     <div id="nav-container">
@@ -40,5 +40,43 @@
         </div>
       </div>
     </div>
+
+    <!-- movie section  -->
+
+    <div id="movie-details-section">
+      <i id="movie-details-loader" class="bx bx-loader"></i>
+      <div id="movie-details-container">
+        <!-- HERE LOAD THE FILM  -->
+
+        <!-- left details -->
+        <div id="left-details-container" class="details-container">
+          <div class="border">
+            <img id="film-img" src="" alt="movie-cover" />
+          </div>
+        </div>
+        <!-- right details -->
+        <div id="right-details-container" class="details-container">
+          <h1 id="title"></h1>
+          <h1 id="duration"></h1>
+          <div id="genres">
+            <h3>genres :</h3>
+          </div>
+          <h4 id="date"></h4>
+          <div id="production-companies-container">
+            <h2 class="description-gold">Production Companyes:</h2>
+            <div id="single-company-container">
+              <!-- here insert the production company -->
+            </div>
+          </div>
+          <div id="description">
+            <p class="description-gold">description:</p>
+          </div>
+          <div id="rating-container">
+            <h3 id="vote">vote :</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/film-details.js"></script>
   </body>
 </html>

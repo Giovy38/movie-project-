@@ -46,6 +46,7 @@ async function searchMovie() {
         //   create all card element
         const singleMovieCard = document.createElement("div");
         const border = document.createElement("div");
+        const imgLink = document.createElement("a");
         const imgDiv = document.createElement("div");
         const img = document.createElement("img");
         const title = document.createElement("h2");
@@ -58,6 +59,7 @@ async function searchMovie() {
         //   assign class to all element
         singleMovieCard.className = "single-movie-card";
         border.className = "border";
+        imgLink.href = "/assets/page/movie-details.html";
         imgDiv.className = "img-div-border";
         img.className = "single-card-img";
         title.className = "single-card-title";
@@ -79,6 +81,7 @@ async function searchMovie() {
 
         // append img
         imgDiv.appendChild(img);
+        imgLink.appendChild(imgDiv);
 
         //  read more div
         readMoreBtn.appendChild(readMoreText);
@@ -87,7 +90,7 @@ async function searchMovie() {
 
         //   border
 
-        border.appendChild(imgDiv);
+        border.appendChild(imgLink);
         border.appendChild(title);
         border.appendChild(readMoreLink);
 
@@ -97,6 +100,14 @@ async function searchMovie() {
 
         // upcoming container
         searchMoviesContainer.appendChild(singleMovieCard);
+
+        // add event on imgDiv and read more
+        imgDiv.addEventListener("click", movieDetails);
+        readMoreLink.addEventListener("click", movieDetails);
+
+        function movieDetails(e) {
+          localStorage.setItem("movieId", movie.id);
+        }
       });
     } catch {
     } finally {
