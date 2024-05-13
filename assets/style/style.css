@@ -495,7 +495,7 @@ body {
 }
 #hogwarts-section .section-container .section-sub-container #houses-container .img-border {
   max-width: 277px;
-  max-height: 40vh;
+  max-height: 50vh;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
