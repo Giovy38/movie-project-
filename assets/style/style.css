@@ -984,6 +984,7 @@ body {
   font-weight: weight;
   font-style: normal;
   font-size: 25px;
+  text-align: center;
 }
 #library-section .section-container #single-book-info {
   display: flex;
@@ -1000,6 +1001,7 @@ body {
 #library-section .section-container #single-book-info #single-book-showed-title {
   font-size: 30px;
   color: rgb(194, 155, 19);
+  text-align: center;
 }
 #library-section .section-container #single-book-info #single-book-showed-data {
   color: rgb(114, 110, 110);

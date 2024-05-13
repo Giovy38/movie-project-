@@ -1178,6 +1178,8 @@ body{
             font-weight: weight;
             font-style: normal;
             font-size: 25px;
+            text-align: center;
+
         }
 
         #single-book-info{
@@ -1194,6 +1196,7 @@ body{
             #single-book-showed-title{
                 font-size: 30px;
                 color: $smbg;
+                text-align: center;
             }
 
             #single-book-showed-data{
