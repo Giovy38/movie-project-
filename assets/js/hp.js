@@ -148,6 +148,10 @@ async function knowSomeone() {
         charName.textContent = char.fullName;
         charHouse.textContent = char.hogwartsHouse;
         charBirthdate.textContent = char.birthdate;
+
+        if (char.children.length > 0) {
+          childrenContainer.innerHTML = "children:<br>";
+        }
         char.children.forEach((children) => {
           const child = document.createElement("p");
           child.textContent = children;
