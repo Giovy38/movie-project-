@@ -275,3 +275,64 @@ ravenclawFilter.addEventListener("click", () => {
     }
   });
 });
+
+// ------------ BOOK SECTION --------------
+
+window.addEventListener("DOMContentLoaded", loadBooks);
+const booksLoad = document.getElementById("book-loader");
+const libraryRefresh = document.getElementById("library-refresh");
+const textError = document.getElementById("library-api-error");
+
+libraryRefresh.addEventListener("click", loadBooks);
+
+async function loadBooks() {
+  booksLoad.style.display = "block";
+  textError.style.display = "none";
+
+  const libraryContainer = document.getElementById("library-container");
+
+  try {
+    const res = await fetch("https://potterapi-fedeperin.vercel.app/en/books");
+    const data = await res.json();
+    console.log(data);
+
+    data.forEach((book) => {
+      const singleBookDiv = document.createElement("div");
+      const singleBookImg = document.createElement("img");
+      const bookTitleShowed = document.getElementById("book-title");
+
+      singleBookDiv.className = "single-book";
+      singleBookImg.className = "single-book-img";
+      singleBookImg.src = "/assets/img/single-book.jpg";
+
+      singleBookDiv.appendChild(singleBookImg);
+      libraryContainer.appendChild(singleBookDiv);
+
+      singleBookImg.addEventListener("mouseover", () => {
+        bookTitleShowed.textContent = book.originalTitle;
+      });
+
+      singleBookImg.addEventListener("click", () => {
+        const img = document.getElementById("single-book-showed-img");
+        const title = document.getElementById("single-book-showed-title");
+        const data = document.getElementById("single-book-showed-data");
+        const pages = document.getElementById("single-book-showed-pages");
+        const description = document.getElementById(
+          "single-book-showed-description"
+        );
+
+        img.src = book.cover;
+        title.textContent = book.originalTitle;
+        data.innerHTML = `Relase Data: ${book.releaseDate}`;
+        pages.innerHTML = `Pages : ${book.pages}`;
+        description.innerHTML = `Description : <br> ${book.description}`;
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    libraryRefresh.style.display = "block";
+    textError.style.display = "block";
+  } finally {
+    booksLoad.style.display = "none";
+  }
+}

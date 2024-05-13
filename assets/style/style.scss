@@ -1076,13 +1076,124 @@ body{
 
     &:hover{
         position: relative;
-        bottom: 20px;
+        top: 20px;
         color: $gtext;
     }
  }
 
 }
 
+
+// --------- BOOK SECTION --------------------
+
+#book-section{
+    #library-arrow{
+        text-decoration: none;
+        color: $smbg;
+        font-size: 25px;
+
+    }
+}
+
+// ---------- LIBRARY SECTION --------------------
+
+#library-section{
+    margin-top: 50px;
+    .section-container{
+        min-height: 100vh;
+        @include flexCenter;
+        flex-direction: column;
+
+        #library-title{
+            font-size: 72px;
+            background: $b-w-gradient;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        #book-loader{
+            font-size: 25px;
+            text-transform: uppercase;
+            animation: load 2s linear infinite;
+            display: none;
+
+            @keyframes load {
+                from{
+                    opacity: 40%;
+                }
+                to{
+                    opacity: 100%;
+                }
+            }
+        }
+
+        #library-api-error{
+            font-size: 25px;
+            color: $error;
+            display: none;
+        }
+
+        #library-refresh{
+            font-size: 25px;
+            color: $wtext;
+            cursor: pointer;
+            display: none;
+
+          
+        }
+
+        #library-container{
+            @include flexCenter;
+            flex-wrap: wrap;
+            padding: 10px;
+
+
+            .single-book{
+                opacity: 60%;
+
+                &:hover{
+                    opacity: 100%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .title-div{
+            font-family: "Briem Hand", cursive;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-size: 25px;
+        }
+
+        #single-book-info{
+            @include flexCenter;
+            flex-direction: column;
+            border-top: 2px solid $gtext;
+            padding: 15px;
+
+            #single-book-showed-img{
+                height: 250px;
+                border-radius: 10px;
+            }
+
+            #single-book-showed-title{
+                font-size: 30px;
+                color: $smbg;
+            }
+
+            #single-book-showed-data{
+                color: $gtext;
+            }
+
+            #single-book-showed-description{
+                text-align: center;
+                max-width: 500px;
+            }
+        }
+    }
+}
 
 
 

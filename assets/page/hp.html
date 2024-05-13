@@ -17,6 +17,13 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freeman&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,700&family=Sedan+SC&display=swap"
       rel="stylesheet"
     />
+    <!-- import book title font from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Briem+Hand:wght@100..900&family=Freeman&family=Jacquard+24+Charted&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,700&family=Sedan+SC&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- import style from stile.css -->
     <link rel="stylesheet" href="/assets/style/style.css" />
@@ -383,9 +390,53 @@
       </div>
       <h1 id="api-error">api error - retry</h1>
 
-      <a href="#welcome-section">
-        <i id="up-arrow-section" class="bx bxs-arrow-from-bottom"></i>
+      <a href="#book-section">
+        <i id="up-arrow-section" class="bx bx-chevrons-down"></i>
       </a>
+    </section>
+
+    <!-- BOOK SECTION  -->
+
+    <section id="book-section">
+      <div class="section-container">
+        <img
+          id="tom-riddle-diary"
+          class="hp-img"
+          src="/assets/img/tom-riddle-diary.jpeg"
+          alt="bg"
+        />
+        <div class="section-sub-container">
+          <h1 class="section-title">go to our library</h1>
+          <a id="library-arrow" href="#library-section"
+            >read something <i class="bx bx-down-arrow-alt"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIBRARY SECTION  -->
+
+    <section id="library-section">
+      <div class="section-container">
+        <h1 id="library-title">this is our library</h1>
+        <i id="book-loader" class="bx bxs-book"> Loading books...</i>
+        <h4 id="library-api-error">API ERROR- TRY TO REFRESH</h4>
+        <i id="library-refresh" class="bx bx-refresh">Refresh</i>
+
+        <div id="library-container">
+          <!-- here single book is created -->
+        </div>
+        <div class="title-div">
+          <h3 id="book-title"></h3>
+        </div>
+        <div id="single-book-info">
+          <img id="single-book-showed-img" src="" />
+          <h1 id="single-book-showed-title"></h1>
+          <h4 id="single-book-showed-data"></h4>
+          <h4 id="single-book-showed-pages"></h4>
+          <p id="single-book-showed-description"></p>
+        </div>
+      </div>
     </section>
 
     <footer class="footer-section">

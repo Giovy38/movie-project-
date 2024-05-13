@@ -898,6 +898,100 @@ body {
 }
 #characters-results-section #up-arrow-section:hover {
   position: relative;
-  bottom: 20px;
+  top: 20px;
   color: rgb(114, 110, 110);
+}
+
+#book-section #library-arrow {
+  text-decoration: none;
+  color: rgb(194, 155, 19);
+  font-size: 25px;
+}
+
+#library-section {
+  margin-top: 50px;
+}
+#library-section .section-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#library-section .section-container #library-title {
+  font-size: 72px;
+  background: linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+#library-section .section-container #book-loader {
+  font-size: 25px;
+  text-transform: uppercase;
+  animation: load 2s linear infinite;
+  display: none;
+}
+@keyframes load {
+  from {
+    opacity: 40%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+#library-section .section-container #library-api-error {
+  font-size: 25px;
+  color: rgb(187, 11, 11);
+  display: none;
+}
+#library-section .section-container #library-refresh {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+#library-section .section-container #library-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+#library-section .section-container #library-container .single-book {
+  opacity: 60%;
+}
+#library-section .section-container #library-container .single-book:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+#library-section .section-container .title-div {
+  font-family: "Briem Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 25px;
+}
+#library-section .section-container #single-book-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 2px solid rgb(114, 110, 110);
+  padding: 15px;
+}
+#library-section .section-container #single-book-info #single-book-showed-img {
+  height: 250px;
+  border-radius: 10px;
+}
+#library-section .section-container #single-book-info #single-book-showed-title {
+  font-size: 30px;
+  color: rgb(194, 155, 19);
+}
+#library-section .section-container #single-book-info #single-book-showed-data {
+  color: rgb(114, 110, 110);
+}
+#library-section .section-container #single-book-info #single-book-showed-description {
+  text-align: center;
+  max-width: 500px;
 }/*# sourceMappingURL=style.css.map */
