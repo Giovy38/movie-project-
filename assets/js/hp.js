@@ -1,5 +1,16 @@
-window.addEventListener("DOMContentLoaded", async () => {
+const refreshBtn = document.querySelectorAll(".bx-refresh");
+const housesLoadInfo = document.querySelectorAll(".house-load-info");
+
+window.addEventListener("DOMContentLoaded", loadHousesInfo);
+
+async function loadHousesInfo() {
   try {
+    housesLoadInfo.forEach((load) => {
+      load.style.display = "block";
+    });
+    refreshBtn.forEach((btn) => {
+      btn.style.display = "none";
+    });
     const res = await fetch("https://potterapi-fedeperin.vercel.app/en/houses");
     const data = await res.json();
 
@@ -38,6 +49,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     ravenclawTitle.textContent = ravenclaw.house;
     ravenclawFounder.textContent = ravenclaw.founder;
+
+    housesLoadInfo.forEach((load) => {
+      load.style.display = "none";
+    });
   } catch {
     const griffindorTitle = document.getElementById("griffindor-title");
     const griffindorFounder = document.getElementById("griffindor-founder");
@@ -62,8 +77,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     ravenclawTitle.textContent = "API Error";
     ravenclawFounder.textContent = "API Error";
+
+    refreshBtn.forEach((btn) => {
+      btn.style.display = "block";
+      btn.addEventListener("click", loadHousesInfo);
+    });
+
+    housesLoadInfo.forEach((load) => {
+      load.style.display = "none";
+    });
   }
-});
+}
 
 const knowSomeoneBtn = document.getElementById("know-someone-btn");
 const charLoader = document.getElementById("char-load-icon");
