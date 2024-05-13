@@ -1158,6 +1158,18 @@ body{
                     cursor: pointer;
                 }
             }
+
+            .single-book-img{
+                height: 150px;
+
+                @include tablet{
+                    height: 400px;
+                }
+
+                @include intermediate{
+                    height: 677px;
+                }
+            }
         }
 
         .title-div{

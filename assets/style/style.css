@@ -965,6 +965,19 @@ body {
   opacity: 100%;
   cursor: pointer;
 }
+#library-section .section-container #library-container .single-book-img {
+  height: 150px;
+}
+@media screen and (min-width: 768px) {
+  #library-section .section-container #library-container .single-book-img {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1226px) {
+  #library-section .section-container #library-container .single-book-img {
+    height: 677px;
+  }
+}
 #library-section .section-container .title-div {
   font-family: "Briem Hand", cursive;
   font-optical-sizing: auto;
