@@ -804,11 +804,11 @@ body {
 }
 #characters-results-section #character-container #char-load-icon {
   font-size: 80px;
-  animation: load 2s linear infinite;
+  animation: loading 2s linear infinite;
   height: 100%;
   display: none;
 }
-@keyframes load {
+@keyframes loading {
   from {
     transform: rotate(0);
   }
