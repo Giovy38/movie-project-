@@ -1166,9 +1166,9 @@ body{
                     height: 400px;
                 }
 
-                @include intermediate{
-                    height: 677px;
-                }
+                // @include intermediate{
+                //     height: 500px;
+                // }
             }
         }
 
@@ -1184,7 +1184,8 @@ body{
 
         #single-book-info{
             @include flexCenter;
-            flex-direction: column;
+            // flex-direction: column;
+            gap: 35px;
             border-top: 2px solid $gtext;
             padding: 15px;
 
@@ -1193,6 +1194,10 @@ body{
                 border-radius: 10px;
             }
 
+           .right-book-info{
+
+            @include flexCenter;
+            flex-direction: column;
             #single-book-showed-title{
                 font-size: 30px;
                 color: $smbg;
@@ -1207,11 +1212,97 @@ body{
                 text-align: center;
                 max-width: 500px;
             }
+           }
         }
     }
 }
 
+// --------- SPELLS SECTION --------------
 
+#spells-section{
+    margin-top: 100px;
+    background: $spells-bg;
+    
+   .section-container{
+
+
+
+    img{
+        max-height: 959px;
+    }
+
+    .section-sub-container{
+        padding: 15px;
+
+        .spells-icon{
+            font-size: 25px;
+            text-transform: uppercase;
+            animation: show-hide 2s linear infinite;
+
+            @keyframes show-hide {
+                from{
+                    opacity: 40%;
+                }
+                to{
+                    opacity: 100%;
+                }
+            }
+
+        }
+
+        #spells-load{
+            display: none;
+        }
+
+        #spells-refresh{
+            cursor: pointer;
+            color: $error;
+        }
+
+
+        #spells-container{
+            .single-spell{
+                text-align: center;
+
+               
+
+                h3{
+                    color: $smbg;
+                    font-size: 22px;
+                }
+
+                h4{
+                    color: $gtext;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+   }
+}
+
+// arrow up section 
+
+#turn-up-section{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    .section-container{
+       display: flex;
+       justify-content: flex-end;
+       padding: 20px;
+        
+
+        #up-section-icon{
+            text-decoration: none;
+            color: $wtext;
+            font-size: 50px;
+        }
+    }
+
+}
 
 
 

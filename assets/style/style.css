@@ -973,11 +973,6 @@ body {
     height: 400px;
   }
 }
-@media screen and (min-width: 1226px) {
-  #library-section .section-container #library-container .single-book-img {
-    height: 677px;
-  }
-}
 #library-section .section-container .title-div {
   font-family: "Briem Hand", cursive;
   font-optical-sizing: auto;
@@ -990,7 +985,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  gap: 35px;
   border-top: 2px solid rgb(114, 110, 110);
   padding: 15px;
 }
@@ -998,15 +993,80 @@ body {
   height: 250px;
   border-radius: 10px;
 }
-#library-section .section-container #single-book-info #single-book-showed-title {
+#library-section .section-container #single-book-info .right-book-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#library-section .section-container #single-book-info .right-book-info #single-book-showed-title {
   font-size: 30px;
   color: rgb(194, 155, 19);
   text-align: center;
 }
-#library-section .section-container #single-book-info #single-book-showed-data {
+#library-section .section-container #single-book-info .right-book-info #single-book-showed-data {
   color: rgb(114, 110, 110);
 }
-#library-section .section-container #single-book-info #single-book-showed-description {
+#library-section .section-container #single-book-info .right-book-info #single-book-showed-description {
   text-align: center;
   max-width: 500px;
+}
+
+#spells-section {
+  margin-top: 100px;
+  background: linear-gradient(to right, rgb(206, 162, 88), rgb(2, 2, 2));
+}
+#spells-section .section-container img {
+  max-height: 959px;
+}
+#spells-section .section-container .section-sub-container {
+  padding: 15px;
+}
+#spells-section .section-container .section-sub-container .spells-icon {
+  font-size: 25px;
+  text-transform: uppercase;
+  animation: show-hide 2s linear infinite;
+}
+@keyframes show-hide {
+  from {
+    opacity: 40%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+#spells-section .section-container .section-sub-container #spells-load {
+  display: none;
+}
+#spells-section .section-container .section-sub-container #spells-refresh {
+  cursor: pointer;
+  color: rgb(187, 11, 11);
+}
+#spells-section .section-container .section-sub-container #spells-container .single-spell {
+  text-align: center;
+}
+#spells-section .section-container .section-sub-container #spells-container .single-spell h3 {
+  color: rgb(194, 155, 19);
+  font-size: 22px;
+}
+#spells-section .section-container .section-sub-container #spells-container .single-spell h4 {
+  color: rgb(114, 110, 110);
+  font-size: 20px;
+}
+
+#turn-up-section {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#turn-up-section .section-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+#turn-up-section .section-container #up-section-icon {
+  text-decoration: none;
+  color: white;
+  font-size: 50px;
 }/*# sourceMappingURL=style.css.map */

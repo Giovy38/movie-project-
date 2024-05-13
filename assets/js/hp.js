@@ -294,7 +294,6 @@ async function loadBooks() {
   try {
     const res = await fetch("https://potterapi-fedeperin.vercel.app/en/books");
     const data = await res.json();
-    console.log(data);
 
     data.forEach((book) => {
       const singleBookDiv = document.createElement("div");
@@ -334,5 +333,45 @@ async function loadBooks() {
     textError.style.display = "block";
   } finally {
     booksLoad.style.display = "none";
+  }
+}
+
+// SPELL TRY
+
+window.addEventListener("DOMContentLoaded", loadSpells);
+const spellsRefresh = document.getElementById("spells-refresh");
+const spellsLoad = document.getElementById("spells-load");
+
+spellsRefresh.addEventListener("click", loadSpells);
+
+async function loadSpells() {
+  spellsRefresh.style.display = "none";
+  spellsLoad.style.display = "block";
+  try {
+    const res = await fetch("https://potterapi-fedeperin.vercel.app/en/spells");
+    const data = await res.json();
+
+    console.log(data);
+
+    data.forEach((spell) => {
+      const spellsContainer = document.getElementById("spells-container");
+      const singleSpell = document.createElement("div");
+      const spellTitle = document.createElement("h3");
+      const spellEffect = document.createElement("h4");
+
+      singleSpell.className = "single-spell";
+      spellTitle.textContent = spell.spell;
+      spellEffect.textContent = spell.use;
+
+      singleSpell.appendChild(spellTitle);
+      singleSpell.appendChild(spellEffect);
+      spellsContainer.appendChild(singleSpell);
+    });
+
+    spellsLoad.style.display = "none";
+  } catch {
+    spellsRefresh.style.display = "block";
+    spellsLoad.style.display = "none";
+    console.log("error");
   }
 }
