@@ -931,6 +931,9 @@ body {
   color: rgb(114, 110, 110);
 }
 
+#book-section .section-container #tom-riddle-diary {
+  max-width: 55vw;
+}
 #book-section #library-arrow {
   text-decoration: none;
   color: rgb(194, 155, 19);
@@ -1045,9 +1048,6 @@ body {
   margin-top: 100px;
   background: linear-gradient(to right, rgb(206, 162, 88), rgb(2, 2, 2));
 }
-#spells-section .section-container img {
-  max-height: 959px;
-}
 #spells-section .section-container .section-sub-container {
   padding: 15px;
 }
@@ -1071,8 +1071,33 @@ body {
   cursor: pointer;
   color: rgb(187, 11, 11);
 }
+#spells-section .section-container .section-sub-container #spells-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+@media screen and (min-width: 1226px) {
+  #spells-section .section-container .section-sub-container #spells-container {
+    justify-content: space-around;
+  }
+}
 #spells-section .section-container .section-sub-container #spells-container .single-spell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+  background: linear-gradient(rgba(59, 6, 6, 0.6352941176), #000000);
+  border-radius: 5px;
+  min-width: 90vw;
+  padding: 5px;
+  max-width: 490px;
+}
+@media screen and (min-width: 768px) {
+  #spells-section .section-container .section-sub-container #spells-container .single-spell {
+    min-width: 490px;
+  }
 }
 #spells-section .section-container .section-sub-container #spells-container .single-spell h3 {
   color: rgb(194, 155, 19);

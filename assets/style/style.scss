@@ -1130,6 +1130,13 @@ body{
 // --------- BOOK SECTION --------------------
 
 #book-section{
+
+    .section-container{
+        #tom-riddle-diary{
+            max-width: 55vw;
+        }
+    }
+
     #library-arrow{
         text-decoration: none;
         color: $smbg;
@@ -1269,10 +1276,6 @@ body{
 
 
 
-    img{
-        max-height: 959px;
-    }
-
     .section-sub-container{
         padding: 15px;
 
@@ -1303,9 +1306,30 @@ body{
 
 
         #spells-container{
-            .single-spell{
-                text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
 
+            @include intermediate{
+                justify-content: space-around;       
+            }
+
+            .single-spell{
+                @include flexCenter;
+                flex-direction: column;
+                text-align: center;
+                background: $gbg;
+                border-radius: 5px;
+                min-width: 90vw;
+                padding: 5px;
+                max-width: 490px;
+
+                @include tablet{
+                    min-width: 490px;
+                }
+
+                
                
 
                 h3{

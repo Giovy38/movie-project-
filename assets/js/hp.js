@@ -503,7 +503,7 @@ async function loadBooks() {
   }
 }
 
-// SPELL TRY
+// SPELLS
 
 window.addEventListener("DOMContentLoaded", loadSpells);
 const spellsRefresh = document.getElementById("spells-refresh");
