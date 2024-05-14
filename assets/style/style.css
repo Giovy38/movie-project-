@@ -127,6 +127,37 @@ body {
   background: rgb(168, 135, 16);
 }
 
+#language-section .language-container {
+  padding: 15px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  #language-section .language-container {
+    justify-content: flex-end;
+    padding: 10px 35px 0 0;
+  }
+}
+#language-section .language-container .lang-icon {
+  width: 50px;
+  height: 34px;
+  padding: 2px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#language-section .language-container .lang-icon:hover {
+  opacity: 80%;
+}
+#language-section .language-container .current-lang {
+  opacity: 100%;
+}
+#language-section .language-container .no-current {
+  opacity: 60%;
+}
+
 .section {
   margin-top: 50px;
   display: flex;
@@ -578,15 +609,9 @@ body {
   text-decoration: none;
   font-size: 50px;
   display: none;
-  animation: rotate 2s linear infinite;
 }
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.single-house-section .single-house-container .single-house-right .bx-refresh::after {
+  content: "refresh";
 }
 .single-house-section .single-house-container .single-house-right .house-description {
   padding: 5px;

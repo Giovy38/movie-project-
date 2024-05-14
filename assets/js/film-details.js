@@ -1,4 +1,7 @@
-window.addEventListener("DOMContentLoaded", async () => {
+window.addEventListener("DOMContentLoaded", filmDetailsShow);
+
+async function filmDetailsShow() {
+  const lang = localStorage.getItem("language");
   const loader = document.getElementById("movie-details-loader");
   const img = document.getElementById("film-img");
   const title = document.getElementById("title");
@@ -27,7 +30,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   try {
     loader.style.display = "block";
     const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieID}?language=en-En&page=1`,
+      `https://api.themoviedb.org/3/movie/${movieID}?language=${lang}-${lang.toLocaleUpperCase()}&page=1`,
       options
     );
     const data = await res.json();
@@ -43,7 +46,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     // SET DETAILS VALUE
 
     // set title
-    title.textContent = data.original_title;
+    title.textContent = data.title;
 
     // set duration
     duration.textContent = ` ${data.runtime} minutes`;
@@ -115,4 +118,4 @@ window.addEventListener("DOMContentLoaded", async () => {
   } finally {
     loader.style.display = "none";
   }
-});
+}

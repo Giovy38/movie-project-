@@ -140,6 +140,45 @@ body{
     
 }
 
+// ---------- LANGUAGE SECTION ----------------
+
+#language-section{
+    .language-container{
+        padding: 15px 0 0 0 ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        @include tablet{
+            justify-content: flex-end;
+            padding: 10px 35px 0 0;
+
+        }
+
+        .lang-icon{
+            width: 50px;
+            height: 34px;
+            padding: 2px;
+            background: $wtext ;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover{
+                opacity: 80%;
+            }
+        }
+
+        .current-lang{
+            opacity: 100%;
+        }
+
+        .no-current{
+            opacity: 60%;
+        }
+    }
+}
+
 // ----------- ALL MOVIES SECTION STYLE ------------
 
 .section{
@@ -677,16 +716,12 @@ body{
                 text-decoration: none;
                 font-size: 50px;
                 display: none;
-                animation: rotate 2s linear infinite;
-
-                @keyframes rotate {
-                    from{
-                        transform: rotate(0deg);
-                    } 
-                    to{
-                        transform: rotate(360deg);
-                    }
+                
+                &::after{
+                    content: 'refresh';
                 }
+                
+
 
             }
 
