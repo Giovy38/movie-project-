@@ -7,7 +7,38 @@ const searchMoviesContainer = document.getElementById(
 );
 const noResultFoundText = document.getElementById("no-result-found-text");
 
+// search when load page
+
+window.addEventListener("popstate", () => {
+  if (searchContent.value.trim() !== "") {
+    searchMovie();
+  }
+});
+
+window.addEventListener("pageshow", () => {
+  if (searchContent.value.trim() !== "") {
+    searchMovie();
+  }
+});
+
 searchBtn.addEventListener("click", searchMovie);
+
+searchContent.addEventListener("input", () => {
+  searchMovieDebounced();
+});
+
+// search when i write
+function debounce(searchMovie, timeout) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      searchMovie();
+    }, timeout);
+  };
+}
+
+const searchMovieDebounced = debounce(searchMovie, 2000);
 
 searchContent.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
@@ -121,9 +152,8 @@ async function searchMovie() {
     } finally {
       loader.style.display = "none";
       subtitle.style.display = "none";
-      searchContent.value = "";
     }
   } else {
-    alert("you must write a title before search");
+    searchContent.placeholder = "MUST WRITE SOMETHING TO SEARCH";
   }
 }
